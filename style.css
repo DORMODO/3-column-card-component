@@ -1,0 +1,123 @@
+:root {
+  --clr-orange: hsl(31, 77%, 52%);
+  --clr-cyan: hsl(184, 100%, 22%);
+  --clr-dark-cyan: hsl(179, 100%, 13%);
+
+  --clr-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --clr-light-gray: hsl(0, 0%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-light-gray);
+}
+
+.container {
+  width: 850px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 38px;
+}
+
+.card__icon {
+  align-self: flex-start;
+}
+
+.sedans {
+  background-color: var(--clr-orange);
+  border-radius: 8px 0 0 8px;
+
+  & .sedans__button {
+    color: var(--clr-orange);
+  }
+}
+
+.suvs {
+  background-color: var(--clr-cyan);
+
+  & .suvs__button {
+    color: var(--clr-cyan);
+  }
+}
+
+.luxury {
+  background-color: var(--clr-dark-cyan);
+  border-radius: 0 8px 8px 0;
+
+  & .sedans__button {
+    color: var(--clr-dark-cyan);
+  }
+}
+
+
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  & .card__content-heading {
+    font-family: "Big Shoulders Display";
+    font-weight: 700;
+    color: var(--clr-light-gray);
+    text-transform: uppercase;
+    font-size: 38px;
+  }
+
+  & .card__content-description {
+    font-family: "Lexend Deca";
+    font-weight: 400;
+    color: var(--clr-transparent-white);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+.card__content-button {
+  align-self: flex-start;
+  background-color: var(--clr-light-gray);
+  font-family: "Lexend Deca";
+  font-size: 15px;
+  font-weight: 400;
+  border: 2px solid var(--clr-light-gray);
+  border-radius: 24px;
+  padding: 12px 25px;
+  margin-top: 70px;
+  cursor: pointer;
+  transition: 0.15s;
+
+  &:hover {
+    background-color: transparent;
+    color: var(--clr-light-gray);
+  }
+}
+
+@media (max-width: 875px) {
+  .container {
+    flex-direction: column;
+    margin: 10rem 1rem;
+  }
+
+  .sedans {
+    border-radius: 8px 8px 0 0;
+  }
+
+  .luxury {
+    border-radius: 0 0 8px 8px;
+  }
+}
